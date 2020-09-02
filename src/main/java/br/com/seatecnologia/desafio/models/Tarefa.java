@@ -1,16 +1,36 @@
 package br.com.seatecnologia.desafio.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
+@Entity
 public class Tarefa {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
 	private String descricao;
 	private Boolean estaConcluida;
 	private Integer index;
 	
-	private Funcionario funcionario;
+	@ManyToOne
+	private Processo processo;
+	
+	public Tarefa() {
+		
+	}
 
+	public Tarefa(String descricao, Boolean estaConcluida, Integer index, Processo processo) {
+		this.descricao = descricao;
+		this.estaConcluida = estaConcluida;
+		this.index = index;
+		this.processo = processo;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -43,14 +63,11 @@ public class Tarefa {
 		this.index = index;
 	}
 
-	public Funcionario getFuncionario() {
-		return funcionario;
+	public Processo getProcesso() {
+		return processo;
 	}
 
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
+	public void setProcesso(Processo processo) {
+		this.processo = processo;
 	}
-	
-	
-
 }

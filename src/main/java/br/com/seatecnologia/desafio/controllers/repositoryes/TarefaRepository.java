@@ -6,12 +6,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.seatecnologia.desafio.models.Atividade;
+import br.com.seatecnologia.desafio.models.Tarefa;
 
-public interface AtividadeRepository extends JpaRepository<Atividade, Long>{
+public interface TarefaRepository extends JpaRepository<Tarefa, Long> {
 	
-	Page<Atividade> findByNome(String tipo, Pageable pagination);
-
-	Optional<Atividade> findById(Long id);
-
+	Optional<Tarefa> findById(Long id);
+	
+	Page<Tarefa> findById(Long id, Pageable pagination);
 }
