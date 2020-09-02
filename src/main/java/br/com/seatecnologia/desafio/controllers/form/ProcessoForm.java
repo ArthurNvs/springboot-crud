@@ -1,10 +1,14 @@
 package br.com.seatecnologia.desafio.controllers.form;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import br.com.seatecnologia.desafio.controllers.repositoryes.ProcessoRepository;
 import br.com.seatecnologia.desafio.models.Processo;
 
 public class ProcessoForm {
 	
+	@NotNull @NotEmpty
 	private String nome;
 
 	public String getNome() {

@@ -1,12 +1,20 @@
 package br.com.seatecnologia.desafio.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Atividade {
+	
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
+	
+	public Atividade() {
+		
+	}
 	
 	private String nome;
 	
@@ -29,7 +37,4 @@ public class Atividade {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
-
 }

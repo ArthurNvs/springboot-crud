@@ -1,10 +1,14 @@
 package br.com.seatecnologia.desafio.controllers.form;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import br.com.seatecnologia.desafio.controllers.repositoryes.EPIRepository;
 import br.com.seatecnologia.desafio.models.EPI;
 
 public class EPIForm {
 
+	@NotNull @NotEmpty
 	private String tipo;
 
 	public String getTipo() {

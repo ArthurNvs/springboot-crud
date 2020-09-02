@@ -7,6 +7,7 @@ public class Tarefa {
 	
 	private String descricao;
 	private Boolean estaConcluida;
+	private Integer index;
 	
 	private Funcionario funcionario;
 
