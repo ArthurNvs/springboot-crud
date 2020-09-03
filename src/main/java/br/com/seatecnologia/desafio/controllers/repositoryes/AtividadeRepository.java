@@ -10,7 +10,7 @@ import br.com.seatecnologia.desafio.models.Atividade;
 
 public interface AtividadeRepository extends JpaRepository<Atividade, Long>{
 	
-	Page<Atividade> findByNome(String tipo, Pageable pagination);
+	Page<Atividade> findByNome(String nome, Pageable pagination);
 
 	Optional<Atividade> findById(Long id);
 

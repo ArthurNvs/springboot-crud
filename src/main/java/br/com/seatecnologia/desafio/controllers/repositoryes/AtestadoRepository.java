@@ -6,12 +6,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.seatecnologia.desafio.models.Processo;
+import br.com.seatecnologia.desafio.models.Atestado;
 
-public interface ProcessoRepository extends JpaRepository<Processo, Long> {
+public interface AtestadoRepository extends JpaRepository<Atestado, Long> {
+	
+	Optional<Atestado> findById(Long id);
 
-	Page<Processo> findByNome(String nome, Pageable pagination);
-
-	Optional<Processo> findById(Long id);
-
+	Page<Atestado> findById(Long id, Pageable pagination);
 }
