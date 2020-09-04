@@ -25,6 +25,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.seatecnologia.desafio.controllers.dto.EpiDTO;
 import br.com.seatecnologia.desafio.controllers.form.EPIForm;
+import br.com.seatecnologia.desafio.controllers.repositoryes.AtividadeRepository;
 import br.com.seatecnologia.desafio.controllers.repositoryes.EPIRepository;
 import br.com.seatecnologia.desafio.models.EPI;
 
@@ -34,6 +35,9 @@ public class EPIController {
 	
 	@Autowired
 	EPIRepository epiRepository;
+	
+	@Autowired
+	AtividadeRepository atividadeRepository;
 	
 	//Métodos de Leitura
 		@GetMapping
@@ -67,7 +71,7 @@ public class EPIController {
 		public ResponseEntity<EpiDTO> cadastrarEpi(@RequestBody @Valid EPIForm form,
 				UriComponentsBuilder uriBuilder) {
 
-			EPI epi = form.converter(epiRepository);
+			EPI epi = form.converter(atividadeRepository);
 			epiRepository.save(epi);
 
 			URI uri = uriBuilder.path("/epis/{id}").buildAndExpand(epi.getId()).toUri();

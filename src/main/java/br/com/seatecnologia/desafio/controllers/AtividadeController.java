@@ -26,14 +26,18 @@ import org.springframework.web.util.UriComponentsBuilder;
 import br.com.seatecnologia.desafio.controllers.dto.AtividadeDTO;
 import br.com.seatecnologia.desafio.controllers.form.AtividadeForm;
 import br.com.seatecnologia.desafio.controllers.repositoryes.AtividadeRepository;
+import br.com.seatecnologia.desafio.controllers.repositoryes.FuncionarioRepository;
 import br.com.seatecnologia.desafio.models.Atividade;
 
 @RestController
 @RequestMapping("/atividade")
 public class AtividadeController {
-
+	
 	@Autowired
 	AtividadeRepository atividadeRepository;
+
+	@Autowired
+	FuncionarioRepository funcionarioRepository;
 
 	// Métodos de Leitura
 	@GetMapping
@@ -67,7 +71,7 @@ public class AtividadeController {
 	public ResponseEntity<AtividadeDTO> cadastrarAtividade(@RequestBody @Valid AtividadeForm form,
 			UriComponentsBuilder uriBuilder) {
 
-		Atividade atividade = form.converter(atividadeRepository);
+		Atividade atividade = form.converter(funcionarioRepository);
 		atividadeRepository.save(atividade);
 
 		URI uri = uriBuilder.path("/atividades/{id}").buildAndExpand(atividade.getId()).toUri();

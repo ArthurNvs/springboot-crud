@@ -21,6 +21,7 @@ public class Funcionario {
 	private Boolean estaAtivo;
 	private Boolean usaEPI;
 	
+	
 	public Funcionario() {
 		
 	}

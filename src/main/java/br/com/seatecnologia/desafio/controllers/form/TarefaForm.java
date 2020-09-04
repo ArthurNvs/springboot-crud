@@ -5,8 +5,6 @@ import java.util.Optional;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.lang.Nullable;
-
 import br.com.seatecnologia.desafio.controllers.repositoryes.ProcessoRepository;
 import br.com.seatecnologia.desafio.controllers.repositoryes.TarefaRepository;
 import br.com.seatecnologia.desafio.models.Processo;
@@ -20,7 +18,7 @@ public class TarefaForm {
 	private Boolean estaConcluida;
 	@NotNull
 	private Integer index;
-	@Nullable
+	@NotNull
 	private Long processoId;
 	
 	public String getDescricao() {

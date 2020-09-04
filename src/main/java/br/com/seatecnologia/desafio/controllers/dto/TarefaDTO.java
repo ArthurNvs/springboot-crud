@@ -38,11 +38,11 @@ public class TarefaDTO {
 	}
 	
 	public ProcessoDTO getProcesso() {
-		return this.processo;
+		return processo;
 	}
 	
-	public static Page<TarefaDTO> converterParaDTO(Page<Tarefa> processos) {
-		return processos.map(TarefaDTO::new);
+	public static Page<TarefaDTO> converterParaDTO(Page<Tarefa> tarefas) {
+		return tarefas.map(TarefaDTO::new);
 	}
 
 }

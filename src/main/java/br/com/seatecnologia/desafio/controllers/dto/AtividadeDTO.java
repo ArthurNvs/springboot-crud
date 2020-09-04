@@ -8,10 +8,12 @@ public class AtividadeDTO {
 	
 	private Long id;
 	private String nome;
+	private FuncionarioDTO funcionario;
 	
 	public AtividadeDTO(Atividade atividade) {
 		this.id = atividade.getId();
 		this.nome = atividade.getNome();
+		this.funcionario = new FuncionarioDTO(atividade.getFuncionario());
 	}
 	
 	public Long getId() {
@@ -22,7 +24,11 @@ public class AtividadeDTO {
 		return nome;
 	}
 	
-	public static Page<AtividadeDTO> converterParaDTO(Page<Atividade> processos) {
-		return processos.map(AtividadeDTO::new);
+	public FuncionarioDTO getEpi() {
+		return funcionario;
+	}
+	
+	public static Page<AtividadeDTO> converterParaDTO(Page<Atividade> atividades) {
+		return atividades.map(AtividadeDTO::new);
 	}
 }
