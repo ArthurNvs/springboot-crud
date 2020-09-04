@@ -15,7 +15,7 @@ public class AtestadoForm {
 	private String link;
 	@NotNull
 	private String descricao;
-
+	@NotNull
 	private Long funcionarioId;
 	
 	
@@ -46,7 +46,7 @@ public class AtestadoForm {
 	public Atestado converter(FuncionarioRepository funcionarioRepository) {
 		Optional<Funcionario> optionalFuncionario = funcionarioRepository.findById(getFuncionarioId());
 		Funcionario funcionario = optionalFuncionario.get();
-		
+		System.out.println("AKEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE" + funcionario.toString());
 		return new Atestado(link, descricao, funcionario);
 	}
 	

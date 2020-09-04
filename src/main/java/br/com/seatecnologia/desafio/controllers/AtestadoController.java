@@ -67,7 +67,7 @@ public class AtestadoController {
 
 			//Métodos de Escrita
 			@PostMapping
-			@Transactional
+
 			public ResponseEntity<AtestadoDTO> cadastrarAtestado(@RequestBody @Valid AtestadoForm form,
 					UriComponentsBuilder uriBuilder) {
 

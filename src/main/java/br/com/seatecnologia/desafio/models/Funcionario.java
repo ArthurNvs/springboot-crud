@@ -108,6 +108,10 @@ public class Funcionario {
 		this.usaEPI = usaEPI;
 	}
 	
-	
+	@Override
+	public String toString() {
+
+		return this.getNome() + " id:" + this.getId();
+	}
 	
 }

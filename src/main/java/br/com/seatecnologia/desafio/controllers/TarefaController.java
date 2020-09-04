@@ -74,7 +74,7 @@ public class TarefaController {
 			Tarefa tarefa = form.converter(processoRepository);
 			tarefaRepository.save(tarefa);
 
-			URI uri = uriBuilder.path("/tarefas/{id}").buildAndExpand(tarefa.getId()).toUri();
+			URI uri = uriBuilder.path("/tarefa/{id}").buildAndExpand(tarefa.getId()).toUri();
 			return ResponseEntity.created(uri).body(new TarefaDTO(tarefa));
 		}
 
