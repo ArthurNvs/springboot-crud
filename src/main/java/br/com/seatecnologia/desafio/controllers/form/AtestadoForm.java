@@ -46,7 +46,7 @@ public class AtestadoForm {
 	public Atestado converter(FuncionarioRepository funcionarioRepository) {
 		Optional<Funcionario> optionalFuncionario = funcionarioRepository.findById(getFuncionarioId());
 		Funcionario funcionario = optionalFuncionario.get();
-		System.out.println("AKEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE" + funcionario.toString());
+		System.out.println("FUNCIONÁRIO OBTIDO: " + funcionario.toString());
 		return new Atestado(link, descricao, funcionario);
 	}
 	
