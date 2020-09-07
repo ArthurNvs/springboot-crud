@@ -74,7 +74,7 @@ public class EPIController {
 			EPI epi = form.converter(atividadeRepository);
 			epiRepository.save(epi);
 
-			URI uri = uriBuilder.path("/epis/{id}").buildAndExpand(epi.getId()).toUri();
+			URI uri = uriBuilder.path("/epi/{id}").buildAndExpand(epi.getId()).toUri();
 			return ResponseEntity.created(uri).body(new EpiDTO(epi));
 		}
 

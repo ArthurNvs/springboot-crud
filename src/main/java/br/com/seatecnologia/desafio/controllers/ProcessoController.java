@@ -70,7 +70,7 @@ public class ProcessoController {
 		Processo processo = form.converter(processoRepository);
 		processoRepository.save(processo);
 
-		URI uri = uriBuilder.path("/processos/{id}").buildAndExpand(processo.getId()).toUri();
+		URI uri = uriBuilder.path("/processo/{id}").buildAndExpand(processo.getId()).toUri();
 		return ResponseEntity.created(uri).body(new ProcessoDTO(processo));
 	}
 

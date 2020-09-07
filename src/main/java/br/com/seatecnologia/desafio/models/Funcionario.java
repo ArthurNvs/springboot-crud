@@ -11,7 +11,7 @@ public class Funcionario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
-	
+
 	private String nome;
 	private String sexo;
 	private String cpf;
@@ -20,13 +20,17 @@ public class Funcionario {
 	private String cargo;
 	private Boolean estaAtivo;
 	private Boolean usaEPI;
-	
-	
+
 	public Funcionario() {
-		
+
 	}
-	
-	public Funcionario(String nome, String sexo, String cpf, String dataDeNascimento, String rg, String cargo, Boolean estaAtivo, Boolean usaEPI) {
+
+	public Funcionario(String nome) {
+		this.nome = nome;
+	}
+
+	public Funcionario(String nome, String sexo, String cpf, String dataDeNascimento, String rg, String cargo,
+			Boolean estaAtivo, Boolean usaEPI) {
 		this.nome = nome;
 		this.sexo = sexo;
 		this.cpf = cpf;
@@ -108,11 +112,11 @@ public class Funcionario {
 	public void setUsaEPI(Boolean usaEPI) {
 		this.usaEPI = usaEPI;
 	}
-	
+
 	@Override
 	public String toString() {
 
 		return this.getNome() + " id:" + this.getId();
 	}
-	
+
 }

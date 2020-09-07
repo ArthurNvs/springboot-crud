@@ -13,8 +13,9 @@ import br.com.seatecnologia.desafio.models.Atividade;
 import br.com.seatecnologia.desafio.models.Funcionario;
 
 public class AtividadeForm {
-	
-	@NotNull @NotEmpty
+
+	@NotNull
+	@NotEmpty
 	private String nome;
 	@Nullable
 	private Long funcionarioId;
@@ -26,33 +27,32 @@ public class AtividadeForm {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
+
 	public Long getFuncionarioId() {
 		return funcionarioId;
 	}
-	
+
 	public void setFuncionarioId(Long epiId) {
 		this.funcionarioId = epiId;
 	}
-	
+
 	public Atividade converter(FuncionarioRepository funcionarioRepository) {
 		Optional<Funcionario> optionalFuncionario = funcionarioRepository.findById(getFuncionarioId());
 		Funcionario funcionario = optionalFuncionario.get();
 
 		return new Atividade(nome, funcionario);
 	}
-	
+
 	public Atividade converter() {
-		
+
 		return new Atividade(nome);
 	}
-	
+
 	public Atividade atualizar(Long id, AtividadeRepository atividadeRepository) {
 		Atividade atividade = atividadeRepository.getOne(id);
-		
+
 		atividade.setNome(this.nome);
-		
+
 		return atividade;
 	}
 }

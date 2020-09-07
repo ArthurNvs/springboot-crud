@@ -32,7 +32,7 @@ import br.com.seatecnologia.desafio.models.Atividade;
 @RestController
 @RequestMapping("/atividade")
 public class AtividadeController {
-	
+
 	@Autowired
 	AtividadeRepository atividadeRepository;
 

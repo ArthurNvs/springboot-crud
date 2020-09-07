@@ -12,6 +12,7 @@ public class Atividade {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
+	
 	private String nome;
 	
 	@ManyToOne(optional = true)
